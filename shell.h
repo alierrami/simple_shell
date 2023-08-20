@@ -57,6 +57,8 @@ typedef struct passinfo
 } info_t;
 
 char *starts_with(const char *, const char *);
+int _strlen(char *s);
+char *_strcat(char *dest, char *src);
 
 size_t print_list_str(const list_t *);
 list_t *add_node_end(list_t **, const char *, int);
@@ -65,5 +67,8 @@ void _eputs(char *);
 
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
+
+char *_memset(char *s, char b, unsigned int n);
+void ffree(char **pp);
 
 #endif
