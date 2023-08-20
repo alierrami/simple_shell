@@ -59,6 +59,7 @@ typedef struct passinfo
 char *starts_with(const char *, const char *);
 
 size_t print_list_str(const list_t *);
+list_t *add_node_end(list_t **, const char *, int);
 
 void _eputs(char *);
 
