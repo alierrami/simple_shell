@@ -36,3 +36,39 @@ void _puts(char *str)
  */
 char *_strdup(const char *str)
 {
+	int length = 0;
+	char *new_str;
+
+	if (str == NULL)
+		return (NULL);
+
+	while (*str++)
+		length++;
+	new_str = malloc(sizeof(char) * (length + 1));
+	if (new_str == NULL)
+		return (NULL);
+	for (length++; length--;)
+		new_str[length] = *--str;
+	return (new_str);
+}
+
+/**
+ * _strcpy - copies a string
+ * @dest: the destination
+ * @src: the source
+ * Return: a pointer to the destination
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	if (dest == src || src == 0)
+		return (dest);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = 0;
+	return (dest);
+}

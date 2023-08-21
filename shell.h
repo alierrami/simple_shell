@@ -73,5 +73,7 @@ char *_memset(char *s, char b, unsigned int n);
 void ffree(char **pp);
 
 int _putchar(char c);
+void _puts(char *str);
+char *_strdup(const char *str);
 
 #endif
