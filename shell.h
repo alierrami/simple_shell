@@ -72,4 +72,6 @@ int _setenv(info_t *, char *, char *);
 char *_memset(char *s, char b, unsigned int n);
 void ffree(char **pp);
 
+int _putchar(char c);
+
 #endif
