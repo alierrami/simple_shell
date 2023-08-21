@@ -71,6 +71,7 @@ int _setenv(info_t *, char *, char *);
 
 char *_memset(char *s, char b, unsigned int n);
 void ffree(char **pp);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 int _putchar(char c);
 void _puts(char *str);
