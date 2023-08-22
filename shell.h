@@ -12,7 +12,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-
 #define CONVERT_LOWERCASE
 #define CONVERT_UNSIGNED
 
