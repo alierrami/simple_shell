@@ -78,4 +78,8 @@ void _puts(char *str);
 char *_strdup(const char *str);
 char *_strcpy(char *dest, char *src);
 
+char *_strncpy(char *dest, const char *src, int n);
+char *_strncat(char *dest, const char *src, int n);
+char *_strchr(char *s, char c);
+
 #endif
