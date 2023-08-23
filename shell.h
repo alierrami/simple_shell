@@ -92,4 +92,6 @@ char *_strncpy(char *dest, const char *src, int n);
 char *_strncat(char *dest, const char *src, int n);
 char *_strchr(char *s, char c);
 
+int print_alias(list_t *node);
+
 #endif
