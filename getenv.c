@@ -9,7 +9,7 @@ int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
-	char *p;
+OOB	char *p;
 
 	if (!node || !var)
 		return (0);

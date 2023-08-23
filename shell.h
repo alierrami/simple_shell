@@ -64,6 +64,7 @@ char *starts_with(const char *haystack, const char *needle);
 int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
+int check_logic_ops(char *array_commands[], int i, char array_operators[]);
 
 size_t print_list_str(const list_t *h);
 list_t *add_node_end(list_t **head, const char *str, int num);
@@ -75,6 +76,7 @@ void _eputs(char *str);
 int _eputchar(char c);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
+int _getline(data_of_program *data);
 
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
