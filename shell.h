@@ -94,4 +94,6 @@ char *_strchr(char *s, char c);
 
 int print_alias(list_t *node);
 
+int _myhelp(info_t *info);
+
 #endif
