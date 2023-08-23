@@ -73,6 +73,8 @@ void free_list(list_t **head);
 
 void _eputs(char *str);
 int _eputchar(char c);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
