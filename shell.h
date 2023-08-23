@@ -71,7 +71,8 @@ list_t *add_node(list_t **head, const char *str, int num);
 int delete_node_at_index(list_t **head, unsigned int index);
 void free_list(list_t **head);
 
-void _eputs(char *);
+void _eputs(char *str);
+int _eputchar(char c);
 
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
