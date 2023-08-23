@@ -129,23 +129,22 @@ int delete_node_at_index(list_t **head, unsigned int index)
 
 /**
  * free_list - frees all nodes of a list
- * @head_ptr: a double pointer to the head node
+ * @head: a double pointer to the head node
  * Return: void
  */
-void free_list(list_t **head_ptr)
+void free_list(list_t **head)
 {
-	list_t *node, *next_node, *hear;
+	list_t *current = *head;
+	list_t *temp;
 
-	if (!head_ptr || !*head_ptr)
+	if (head == NULL || *head == NULL)
 		return;
-	head = *head_ptr;
-	node = head;
-	while (node)
+
+	while (current != NULL)
 	{
-		next_node = node->next;
-		free(node->str);
-		free(node);
-		node = next_node;
+		temp = current;
+		current = current->next;
+		free(temp);
 	}
-	*head_ptr = NULL;
+	*head = NULL;
 }
