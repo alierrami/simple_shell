@@ -64,17 +64,27 @@ int _putfd(char c, int fd)
  * _putsfd - prints an input string
  * @str: the string to be printed
  * @fd: the file descriptor to write to
- * Return: the number of chars put
+ * Return: the number of bytes written
  */
 int _putsfd(char *str, int fd)
 {
 	int i = 0;
 
-	if (!str)
-		return (0);
-	while (*str)
+	if (str == NULL)
 	{
-		i += _putfd(*str++, fd);
+		return (-1);
 	}
-	return (i);
+
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+
+	int bytes_written = write(fd, str, i);
+
+	if (bytes_written == -1)
+	{
+		return (-1);
+	}
+	return (bytes_written);
 }
