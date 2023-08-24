@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * _str_cpy - copies a string
  * @dest: the destination
