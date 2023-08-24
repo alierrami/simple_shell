@@ -141,7 +141,7 @@ char *_str_cat(char *, char *);
 char *_str_cpy(char *, char *);
 char *_str_dup(const char *);
 void __puts(char *);
-int _put_char(char);
+int _putchar(char);
 
 /* _toem_exits.c */
 char *_strn_cpy(char *, char *, int);
