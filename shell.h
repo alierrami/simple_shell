@@ -212,9 +212,9 @@ int _build_history_list(_info_t *info, char *buf, int linecount);
 int _renumber_history(_info_t *info);
 
 /* _toem_lists.c */
-list_t *_add_node(_list_t **, const char *, int);
-list_t *_add_node_end(_list_t **, const char *, int);
-size_t _print_list_str(const list_t *);
+_list_t *_add_node(_list_t **, const char *, int);
+_list_t *_add_node_end(_list_t **, const char *, int);
+size_t _print_list_str(const _list_t *);
 int _delete_node_at_index(_list_t **, unsigned int);
 void _free_list(_list_t **);
 
@@ -222,7 +222,7 @@ void _free_list(_list_t **);
 size_t _list_len(const _list_t *);
 char **_list_to_strings(_list_t *);
 size_t _print_list(const _list_t *);
-list_t *_node_starts_with(list_t *, char *, char);
+_list_t *_node_starts_with(_list_t *, char *, char);
 ssize_t _get_node_index(_list_t *, _list_t *);
 
 /* _toem_vars.c */
