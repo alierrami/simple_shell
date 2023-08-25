@@ -18,7 +18,7 @@ int _hsh(_info_t *inf, char **avr)
 		if (inter_active(inf))
 			__puts("$ ");
 		_e_put_char(BUF_FLUSH);
-		re = _get_input(inf);
+		re = get_input(inf);
 		if (re != -1)
 		{
 			_set_info(inf, avr);
@@ -56,14 +56,14 @@ int _find_builtin(_info_t *info)
 {
 	int i, built_in_ret = -1;
 	_builtin_table builtintbl[] = {
-		{"exit", _myexit},
-		{"env", _myenv},
-		{"help", _myhelp},
-		{"history", _myhistory},
-		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
+		{"exit", _my_exit},
+		{"env", _my_env},
+		{"help", _my_help},
+		{"history", _my_history},
+		{"setenv", _my_setenv},
+		{"unsetenv", _my_unsetenv},
+		{"cd", _my_cd},
+		{"alias", _my_alias},
 		{NULL, NULL}
 	};
 
@@ -108,7 +108,7 @@ void _find_cmd(_info_t *info)
 	}
 	else
 	{
-		if ((inter_active(info) || _gete_nv(info, "PATH=")
+		if ((inter_active(info) || _get_env(info, "PATH=")
 			|| info->argv[0][0] == '/') && _is_cmd(info, info->argv[0]))
 			_fork_cmd(info);
 		else if (*(info->arg) != '\n')
@@ -125,7 +125,7 @@ void _find_cmd(_info_t *info)
  *
  * Return: void
  */
-void _fork_cmd(info_t *info)
+void _fork_cmd(_info_t *info)
 {
 	pid_t child_pid;
 
@@ -138,9 +138,9 @@ void _fork_cmd(info_t *info)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(info->path, info->argv, get_environ(info)) == -1)
+		if (execve(info->path, info->argv, _get_environ(info)) == -1)
 		{
-			free_info(info, 1);
+			_free_info(info, 1);
 			if (errno == EACCES)
 				exit(126);
 			exit(1);

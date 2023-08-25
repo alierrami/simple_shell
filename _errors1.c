@@ -35,7 +35,7 @@ int _err_atoi(char *s)
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
-void _print_error(info_t *info, char *estr)
+void _print_error(_info_t *info, char *estr)
 {
 	_e_puts(info->fname);
 	_e_puts(": ");
@@ -60,7 +60,7 @@ int _print_d(int input, int fd)
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _e_putchar;
+		__putchar = _e_put_char;
 	if (input < 0)
 	{
 		_abs_ = -input;

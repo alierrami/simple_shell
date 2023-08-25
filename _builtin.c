@@ -7,7 +7,7 @@
  *  Return: exits with a given exit status
  *         (0) if info.argv[0] != "exit"
  */
-int _my_exit(info_t *info)
+int _my_exit(_info_t *info)
 {
 	int exitcheck;
 
@@ -45,7 +45,7 @@ int _my_cd(_info_t *info)
 		__puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
-		dir = _getenv(info, "HOME=");
+		dir = _get_env(info, "HOME=");
 		if (!dir)
 			chdir_ret = /* TODO: what should this be? */
 				chdir((dir = _get_env(info, "PWD=")) ? dir : "/");
@@ -85,7 +85,7 @@ int _my_cd(_info_t *info)
  *          constant function prototype.
  *  Return: Always 0
  */
-int _my_help(info_t *info)
+int _my_help(_info_t *info)
 {
 	char **arg_array;
 
