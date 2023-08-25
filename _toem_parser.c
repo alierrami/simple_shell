@@ -43,14 +43,14 @@ char *_dup_chars(char *pathstr, int start, int stop)
 }
 
 /**
- * _find_path - finds this cmd in the PATH string
+ * __find_path - finds this cmd in the PATH string
  * @info: the info struct
  * @pathstr: the PATH string
  * @cmd: the cmd to find
  *
  * Return: full path of cmd if found or NULL
  */
-char *_find_path(_info_t *info, char *pathstr, char *cmd)
+char *__find_path(_info_t *info, char *pathstr, char *cmd)
 {
 	int i = 0, curr_pos = 0;
 	char *path;
