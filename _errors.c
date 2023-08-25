@@ -20,7 +20,7 @@ void _e_puts(char *str)
 }
 
 /**
- * _e put_char - writes the character c to stderr
+ * _e_put_char - writes the character c to stderr
  * @c: The character to print
  *
  * Return: On success 1.
